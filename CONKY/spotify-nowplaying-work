@@ -1,0 +1,14 @@
+#!/bin/bash
+# Spotify Conky Now Playing
+# by Paul Williams <paul@skenmy.com>
+if [ ! -f ~/.cache/spotify-nowplaying ]
+	then
+		/usr/bin/spotify-nowplaying > ~/.cache/spotify-nowplaying
+fi
+# Is the same song playing?
+if [ "$(/usr/bin/spotify-nowplaying)" != "$(cat ~/.cache/spotify-nowplaying)" ]
+	then
+		/usr/bin/spotify-nowplaying > ~/.cache/spotify-nowplaying
+fi
+
+chmod 777 ~/.cache/spotify-*
