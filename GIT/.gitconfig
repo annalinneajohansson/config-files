@@ -1,0 +1,10 @@
+[user]
+	name = <your descriptive name>
+	email = <your git account email>
+[alias]
+	# git log prettyfied
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	# creates a new repo inside the folder (git this)
+	this = !git init && git add . && git commit -m \"initial commit\"
+	# shortcut to amend a commit message
+        amend = !git log -n 1 --pretty=tformat:%s%n%n%b | git commit -F - --amend
